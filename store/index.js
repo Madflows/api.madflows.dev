@@ -1,7 +1,28 @@
-import create from 'zustand';
+import create from "zustand";
 
-const useBearStore = create((set) => ({
+export const useBearStore = create((set) => ({
   bears: 0,
-  increasePopulation: () => set((state) => ({ bears: state.bears + 1 })),
-  removeAllBears: () => set({ bears: 0 }),
+  increasePopulation: () =>
+    set((state) => ({
+      bears: state.bears + 1,
+    })),
+  removeAllBears: () =>
+    set({
+      bears: 0,
+    }),
+  addBear: (amount) =>
+    set((state) => ({
+      bears: state.bears + amount,
+    })),
+}));
+
+export const useCartStore = create((set) => ({
+  cart: [],
+  addToCart: (item) =>
+    set((state) => ({
+      cart: [...state.cart, item],
+    })),
+  resetCart: () => set((state) => ({
+    cart: []
+  })),
 }));
