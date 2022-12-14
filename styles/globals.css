@@ -4,8 +4,30 @@
 
 * {
     font-family: 'Sofia Pro', sans-serif;
+    @apply text-gray-900;
+    box-sizing: border-box
+}
+
+body {
+    @apply text-sm;
 }
 
 h1, h2, h3 {
     font-family: 'Cubano', sans-serif;
+}
+
+.input-wrapper{
+    @apply w-full flex items-center border-2 rounded-lg overflow-hidden p-0 m-0;
+}
+
+.input-container {
+    @apply py-2.5 px-3 text-sm font-semibold placeholder:text-gray-600 text-gray-800 bg-white w-full outline-none;
+}
+
+.submit-btn {
+    @apply w-full p-2 rounded-md bg-[#fabe63] transition-all font-bold ;
+}
+
+.social-btn {
+    @apply border-2 border-gray-200 text-gray-900 text-xs py-2 px-3 rounded-md hover:bg-gray-200 transition-all font-semibold;
 }

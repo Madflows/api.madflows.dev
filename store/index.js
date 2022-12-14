@@ -22,7 +22,26 @@ export const useCartStore = create((set) => ({
     set((state) => ({
       cart: [...state.cart, item],
     })),
-  resetCart: () => set((state) => ({
-    cart: []
-  })),
+  resetCart: () =>
+    set((state) => ({
+      cart: [],
+    })),
+}));
+
+export const useAuthStore = create((set) => ({
+  user: {
+    signedIn: false,
+  },
+  signIn: () =>
+    set((state) => ({
+      user: {
+        signedIn: true,
+      },
+    })),
+  signOut: () =>
+    set((state) => ({
+      user: {
+        signedIn: false,
+      },
+    })),
 }));
